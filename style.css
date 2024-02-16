@@ -1,0 +1,407 @@
+* {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -o-box-sizing: border-box;
+  box-sizing: border-box;
+  font-family: 'Manrope', sans-serif;
+  padding: 0;
+  margin: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background-image: url(./images/bg-pattern.svg);
+  background-position: 0 0;
+  background-repeat: no-repeat;
+  background-size: 100% 50%;
+  background-color: #f9faff;
+}
+
+ul {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+/* design */
+
+.title {
+  position: relative;
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.title h2 {
+  font-size: 32px;
+}
+
+.title p {
+  margin-top: 10px;
+  color: rgba(0, 0, 0, 0.686);
+}
+
+.title img {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: -1;
+}
+
+.container {
+  background-color: white;
+  width: 40%;
+  border-radius: 8px;
+  padding: 35px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.078);
+}
+
+.scroll {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.scroll p.price {
+  width: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  color: rgba(0, 0, 0, 0.429);
+}
+
+.scroll p#pageviews {
+  width: 50%;
+  align-self: center;
+  color: rgba(0, 0, 0, 0.429);
+  font-size: 14px;
+  font-weight: bold;
+  letter-spacing: 2px;
+}
+
+.scroll p span {
+  font-size: 40px;
+  font-weight: bold;
+  color: black;
+  margin-right: 5px;
+}
+
+.scroll input#range {
+  width: 100%;
+  appearance: none;
+  margin: 30px 0 50px;
+  background: linear-gradient(90deg, #a4f1e9 50%, rgba(206, 205, 205, 0.319) 50%);
+  height: .6rem;
+  border-radius: 10px;
+}
+
+/***** Thumb Styles *****/
+/***** Chrome, Safari, Opera, and Edge Chromium *****/
+input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none; /* Override default look */
+  appearance: none;
+  height: 2.5rem;
+  width: 2.5rem;
+  border-radius: 50%;
+  background: #11d8c1 no-repeat center url(./images/icon-slider.svg);
+  box-shadow: 0 10px 25px #0bffe3b6;
+  cursor: grab;
+}
+
+input[type="range"]::-webkit-slider-thumb:hover {
+  background-color: #7be9de;
+}
+
+.checkbox {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  margin-right: 20px;
+  padding-bottom: 30px;
+  position: relative;
+}
+
+.checkbox::before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: -6.7%;
+  width: 117.2%;
+  height: 1px;
+  background-color:rgba(138, 136, 136, 0.133);
+}
+
+.checkbox p.month {
+  font-size: 12px;
+  margin-right: 10px;
+  color: rgba(0, 0, 0, 0.429);
+}
+
+.checkbox input {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 45px;
+  height: 22px;
+  border-radius: 20px;
+  background-color: rgba(206, 205, 205, 0.319);
+  position: relative;
+  padding: 0 3px;
+  cursor: pointer;
+  transition: .3s;
+}
+
+.checkbox input:hover {
+  background-color: #11d8c1;
+}
+
+.checkbox input:checked {
+  background-color: #11d8c1;
+}
+
+.checkbox input::before {
+  content: "";
+  position: absolute;
+  right: 58%;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 15px;
+  height: 15px;
+  background-color: white;
+  border-radius: 50%;
+  transition: .3s;
+}
+
+.checkbox input:checked::before {
+  right: 3px;
+}
+
+.checkbox p.year {
+  font-size: 12px;
+  margin: 0 10px;
+  color: rgba(0, 0, 0, 0.429);
+}
+
+.checkbox span {
+  font-size: 10px;
+  padding: 1px 5px;
+  background-color: rgba(255, 217, 147, 0.412);
+  color: rgb(255, 77, 0);
+  border-radius: 10px;
+}
+
+.features {
+  padding-top: 30px;
+  width: 95%;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.features ul li {
+  font-size: 13px;
+  color: rgba(0, 0, 0, 0.566);
+}
+
+.features li img {
+  margin-right: 10px;
+}
+
+.features ul li:not(:last-of-type) {
+  margin-bottom: 10px;
+}
+
+.features button {
+  padding: 12px 0px;
+  width: 35%;
+  border: none;
+  background-color: black;
+  color: rgba(255, 255, 255, 0.84);
+  border-radius: 22px;
+  cursor: pointer;
+  transition: .3s;
+}
+
+.features button:hover {
+  color: white;
+}
+
+/* end design */
+/* media query */
+/* small mobile */
+
+@media screen and (max-width: 374px) {
+body {
+    padding: 40px 0;
+  }
+
+  .title h2 {
+    font-size: 20px;
+  }
+
+  .title p {
+    width: 70%;
+    line-height: 1.6;
+    margin: 15px auto 0;
+  }
+
+  .container {
+    width: 93%;
+    padding: 20px;
+  }
+
+  .scroll {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .scroll p#pageviews {
+    width: 100%;
+    margin-bottom: 10px;
+  }
+
+  .scroll p.price {
+    width: 100%;
+    justify-content: center;
+    margin-bottom: 30px;
+    order: 5;
+  }
+
+  .scroll p span {
+    font-size: 35px;
+  }
+
+  .scroll input {
+    margin-bottom: 30px;
+  }
+
+  .checkbox {
+    margin-right: 0;
+  }
+
+  .checkbox p.month {
+    font-size: 10px;
+    margin: 0 5px 0 0;
+  }
+
+  .checkbox p.year {
+    margin: 0 5px;
+    font-size: 10px;
+  }
+
+  .checkbox span {
+    font-size: 9px;
+  }
+
+  .checkbox::before {
+    width: 115.9%;
+    left: -8%;
+  }
+
+  .features {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .features ul {
+    margin-bottom: 25px;
+  }
+
+  .features button {
+    width: 60%;
+  }
+
+  .checkbox input::before {
+    right: 60%;
+  }
+}
+
+/* medium and large mobile */
+
+@media screen and (min-width: 375px) and (max-width: 767px) {
+  body {
+    padding: 30px 0;
+  }
+  .title h2 {
+    font-size: 23px;
+  }
+  .title p {
+    width: 70%;
+    line-height: 1.6;
+    margin: 15px auto 0;
+  }
+  .container {
+    width: 90%;
+    padding: 20px;
+  }
+  .scroll {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+  .scroll p#pageviews {
+    width: 100%;
+    margin-bottom: 10px;
+  }
+  .scroll p.price {
+    width: 100%;
+    justify-content: center;
+    margin-bottom: 30px;
+    order: 5;
+  }
+  .scroll p span {
+    font-size: 35px;
+  }
+  .scroll input {
+    margin-bottom: 30px;
+  }
+  .checkbox {
+    margin-right: 0;
+  }
+  .features {
+    flex-direction: column;
+    text-align: center;
+  }
+  .features ul {
+    margin-bottom: 25px;
+  }
+  .features button {
+    width: 60%;
+  }
+  .checkbox input::before {
+    right: 60%;
+  }
+  .checkbox::before {
+    width: 114.5%;
+    left: -7.5%;
+  }
+}
+
+/* tablet */
+
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+  body {
+    padding: 50px 0;
+  }
+  .container {
+    width: 80%;
+  }
+}
+
+/* laptop */
+
+@media screen and (min-width: 1024px) and (max-width: 1440px) {
+  .container {
+    width: 50%;
+  }
+}
